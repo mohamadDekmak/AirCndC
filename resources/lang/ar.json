@@ -3,5 +3,22 @@
     "Shelter Listings" : "قائمة الملاجئ",
     "Insert Shelters" : "إضافة ملاجئ",
     "Sign Up" : "إضافة حساب",
-    "Login" : "تسجيل الدخول"
+    "Login" : "تسجيل الدخول",
+    "Username:" : "اسم المستخدم:",
+    "Password:" : "كلمة السر:",
+    "Phone Number:" : "رقم الهاتف:",
+    "Photo Of Driving License:" : "صورة عن رخصة القيادة:",
+    "Submit" : "ارسال",
+    "Enter a profile picture:" : "أدخل صورة شخصية:",
+    "Floor No.:" : "أي طابق:",
+    "Capacity:" : "عدد الاشخاص:",
+    "Number of rooms:" : "عدد الغرف:",
+    "Features:" : "مميزات:",
+    "elevator" : "مصعد",
+    "furnished" : "مفروش",
+    "For Rent ?" : "للايجار؟",
+    "Price:" : "السعر:",
+    "Add Shelter" : "اضافة مأوى",
+    "City:" : "المدينة:",
+    "Area:" : "المنطقة:"
 }

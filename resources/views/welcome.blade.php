@@ -9,8 +9,14 @@
 
     <title>Document</title>
 </head>
-<body>
+<body class="mx-5">
 @include('partials/lang_switch')
 @yield('body')
+<style>
+    input{
+        outline: none;
+        padding: 0 10px;
+    }
+</style>
 </body>
 </html>
