@@ -100,7 +100,7 @@
                             </ul>
                         </div>
                     @endif
-                    <p class="flex items-center gap-2">Contact:{{$shelter->}}
+                    <p class="flex items-center gap-2">{{__('Contact:')}} {{$shelter->phone_number}}
                         <a href=""><img src="/assets/whatsapp_icon.svg"></a>
                         <a href=""><img src="/assets/call_us_icon.svg"></a>
                     </p>
@@ -124,7 +124,6 @@
         let insert_listing = document.getElementById('insert_shelters');
         let signUp = document.getElementById('sign_up');
         let login = document.getElementById('Login');
-
         function toggleListing(activeListing, inactiveListing, idToShow, idToHide) {
             activeListing.classList.toggle('active');
             activeListing.classList.toggle('not-active');
@@ -155,5 +154,11 @@
                 toggleListing(login, signUp, 'loginForm', 'signUpForm');
             }
         });
+        let loginExists = @json(isset($_GET['login']));
+        if (loginExists) {
+            insert_listing.click();
+            login.click();
+        }
     </script>
+
 @endsection

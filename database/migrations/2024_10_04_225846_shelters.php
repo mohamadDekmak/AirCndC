@@ -22,6 +22,7 @@ return new class extends Migration
             $table->boolean('furnished')->nullable();
             $table->boolean('elevator')->nullable();
             $table->string('price')->nullable();
+            $table->text('phone_number');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

@@ -99,12 +99,9 @@ class User extends Authenticatable
         $user->phone = $request->phone;
         $user->self_image = 'images/' . $imageName1;
         $user->driving_license = 'images/' . $imageName2;
-
         $user->save();
-
-       Auth::attempt();
-
-        return redirect()->route('user.index' , ['locale' => $locale ?: app()->getLocale()]);
+        $login = true;
+        return redirect()->route('home' , ['locale' => $locale ?: app()->getLocale() , 'login' => $login]);
     }
 
 }

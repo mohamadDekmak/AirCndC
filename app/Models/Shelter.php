@@ -18,7 +18,8 @@ class Shelter extends Model
         'furnished',
         'elevator',
         'price',
-        'user_id'
+        'phone_number',
+        'user_id',
         ];
 
 
@@ -34,6 +35,7 @@ class Shelter extends Model
             'furnished' => 'nullable|boolean',
             'elevator' => 'nullable|boolean',
             'price' => 'nullable',
+            'phone_number' => 'required',
         ]);
         $user = Auth::user();
         Shelter::create([
@@ -46,6 +48,7 @@ class Shelter extends Model
             'furnished' => $request->furnished,
             'elevator' => $request->elevator,
             'price' => $request->price,
+            'phone_number' => $request->phone_number,
             'user_id' => $user->id,
         ]);
 
@@ -54,5 +57,23 @@ class Shelter extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public static function destroy($id ,$locale = null)
+    {
+        $shelter = Shelter::findOrFail($id);
+        $shelter->delete();
+
+        return redirect()->route('user.index' , ['locale' => $locale]);
+    }
+
+    public function edit(Request $request, $id , $locale = null)
+    {
+        // Find the Shelter by ID and update its details
+        $shelter = Shelter::findOrFail($id);
+        $shelter->update($request->except('_token'));
+
+        // Redirect to user.index after successful update rather than user.login.
+        return redirect()->route('user.index' ,  ['locale' => $locale]);
     }
 }
