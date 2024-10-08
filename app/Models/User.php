@@ -54,15 +54,15 @@ class User extends Authenticatable
             'name' => 'required|string',
             'password' => 'required|string',
         ], [
-            'name.required' => 'The username field is required.',
-            'password.required' => 'The password field is required.',
+            'name.required' =>  __('The username field is required.'),
+            'password.required' => __('The password field is required.'),
         ]);
 
         if (Auth::attempt(['name' => $request->name, 'password' => $request->password])) {
             return redirect()->route('user.index' , ['locale' => $locale ?: app()->getLocale()]);
         }
         throw ValidationException::withMessages([
-            'name' => ['The provided credentials are incorrect.'],
+            'name' => [__('The provided credentials are incorrect.')],
         ]);
     }
     public static function store(Request $request , $locale = null)

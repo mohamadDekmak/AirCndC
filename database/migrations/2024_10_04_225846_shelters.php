@@ -18,10 +18,13 @@ return new class extends Migration
             $table->string('floor_no');
             $table->string('nb_of_rooms');
             $table->string('capacity');
-            $table->boolean('rent')->nullable();
+            $table->string('rent_or_no')->default(0);
+            $table->string('available')->default(1);
             $table->boolean('furnished')->nullable();
+            $table->boolean('accessibility')->nullable();
             $table->boolean('elevator')->nullable();
             $table->string('price')->nullable();
+            $table->string('currency')->nullable();
             $table->text('phone_number');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();

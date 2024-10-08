@@ -10,6 +10,10 @@
     <title>Document</title>
 </head>
 <body class="mx-5">
+<div class="flex justify-center">
+    <img  class="w-[135px]" src="/assets/logo1.png" alt="">
+    <img class="object-contain w-[200px]" src="/assets/logo2.jpg" alt="">
+</div>
 @include('partials/lang_switch')
 @yield('body')
 <style>
