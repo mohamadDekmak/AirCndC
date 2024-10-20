@@ -37,7 +37,7 @@
                 class="absolute max-h-[300px] overflow-y-scroll z-10 w-full bg-white border border-gray-300 rounded-lg hidden">
             </ul>
         </div>
-        <select id="dropDown" class="not-active my-2.5 w-full outline-none">
+        <select id="dropDown" class="not-active my-2.5 w-full outline-none rounded">
             <option value="listing">{{__('Shelter Listings')}}</option>
             <option value="insert">{{__('Insert Shelters')}}</option>
             <option value="rent">{{__('For Rent')}}</option>
@@ -103,7 +103,7 @@
         </div>
         <div id="ListingResult">
             @foreach($shelters as $shelter)
-                <div class="not-active p-2.5 mb-2.5">
+                <div class="not-active p-2.5 mb-2.5 rounded">
                     <p>{{$shelter->city}} , {{$shelter->area}}</p>
                     <p>{{__('Floor No.:')}} {{$shelter->floor_no}}</p>
                     <p>{{__('Number of rooms:')}} {{$shelter->floor_no}}</p>
@@ -133,7 +133,7 @@
         </div>
         <div class="hidden" id="RentalListingResult">
             @foreach($rental_data as $rent)
-                <div class="not-active p-2.5 mb-2.5">
+                <div class="not-active p-2.5 mb-2.5 rounded">
                     <p>{{$rent->city}} , {{$rent->area}}</p>
                     <p>{{__('Floor No.:')}} {{$rent->floor_no}}</p>
                     <p>{{__('Number of rooms:')}} {{$rent->floor_no}}</p>
